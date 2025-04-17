@@ -85,6 +85,7 @@ for i, entry in enumerate(data["SOO"]):
     if simplified_chambers[i] == "OTHER" and isinstance(entry, str) and entry in soo_to_chamber_hoja2:
         simplified_chambers[i] = soo_to_chamber_hoja2[entry]
 
+# Changed in notebook, as there are different labels in simplified_chambers
 # === STEP 6: Normalize to Left / Right Ventricle ===
 def normalize_chamber(label):
     if isinstance(label, str):
