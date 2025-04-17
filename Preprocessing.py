@@ -8,7 +8,7 @@ import numpy as np
 with open(r"C:\Users\Usuario\Documents\CompBioMed\compbiomed-seminars\CompBioMed25_Seminars\full_data_corrected_2024.pkl", "rb") as f:
     data = pickle.load(f)
 
-# === STEP 2: Identify ECG Leads and Build Tensor ===
+# Identify ECG Leads and Build Tensor
 ecg_leads = ['I', 'II', 'III', 'AVR', 'AVL', 'AVF', 'V1', 'V2', 'V3', 'V4', 'V5', 'V6']
 signal_length = len(data['I'][0])
 multi_lead_ecgs = np.zeros((181, len(ecg_leads), signal_length))
