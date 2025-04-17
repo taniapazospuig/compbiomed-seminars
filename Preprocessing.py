@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from collections import Counter
 import numpy as np
 
-# === STEP 1: Load ECG Data ===
+# Load ECG data (full_data_corrected_2024.pkl)
 with open(r"C:\Users\Usuario\Documents\CompBioMed\compbiomed-seminars\CompBioMed25_Seminars\full_data_corrected_2024.pkl", "rb") as f:
     data = pickle.load(f)
 
