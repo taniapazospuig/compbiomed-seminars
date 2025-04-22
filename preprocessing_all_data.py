@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 import random
 
 # === STEP 1: Load the all_points dataset ===
-with open(r"C:\Users\Usuario\Documents\CompBioMed\compbiomed-seminars\CompBioMed25_Seminars\all_points_may_2024-001.pkl", "rb") as f:
+with open(r"data/all_points_may_2024-001.pkl", "rb") as f:
     all_points = pickle.load(f)
 
 # === STEP 2: Define ECG leads we expect ===
@@ -32,8 +32,8 @@ def preprocess_ecg_simple(ecg_signals, fs=1000, target_fs=250, high=0.5, low=100
     return ecg_filtered
 
 # === STEP 4: Load SOO mapping from Excel (Hoja1 + Hoja2) ===
-label_map_hoja1 = pd.read_excel(r"C:\Users\Usuario\Documents\CompBioMed\compbiomed-seminars\CompBioMed25_Seminars\labels_FontiersUnsupervised.xlsx", sheet_name="Hoja1")
-label_map_hoja2 = pd.read_excel(r"C:\Users\Usuario\Documents\CompBioMed\compbiomed-seminars\CompBioMed25_Seminars\labels_FontiersUnsupervised.xlsx", sheet_name="Hoja2")
+label_map_hoja1 = pd.read_excel(r"data/labels_FontiersUnsupervised.xlsx", sheet_name="Hoja1")
+label_map_hoja2 = pd.read_excel(r"data/labels_FontiersUnsupervised.xlsx", sheet_name="Hoja2")
 soo_to_chamber = {**dict(zip(label_map_hoja1["SOO"], label_map_hoja1["SOO_Chamber"])),
                   **dict(zip(label_map_hoja2["SOO"], label_map_hoja2["SOO_chamber"]))}
 
@@ -113,7 +113,3 @@ X_final = np.array([x for x, label in zip(X_aug, y_aug) if label in ["Left", "Ri
 print("\n✅ Augmentation complete. Final dataset shape:", X_final.shape)
 print("Left (0):", sum(y_final == 0))
 print("Right (1):", sum(y_final == 1))
-
-# === STEP 9: Save final dataset ===
-np.savez_compressed("ecg_allpoints_preprocessed_250Hz.npz", X=X_final, y=y_final)
-print("📦 Saved to ecg_allpoints_preprocessed_250Hz.npz")
