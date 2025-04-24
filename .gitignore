@@ -1,2 +1,4 @@
 # Ignore large local data files
 data/
+# Ignore processed data files
+processed_data_big_dataset/
