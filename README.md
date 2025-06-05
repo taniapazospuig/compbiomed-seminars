@@ -1,4 +1,4 @@
-# 🫀 ECG Origin Classification in Ventricular Arrhythmias  
+# ECG Origin Classification in Ventricular Arrhythmias  
 ### Final Seminar Project — Computational Models in Biomedicine (CompBioMed)  
 **Universitat Pompeu Fabra (UPF), Barcelona**
 
@@ -8,7 +8,7 @@ Our project presents a complete machine learning pipeline for classifying the an
 
 Our work combines signal preprocessing, deep learning-based segmentation, morphological feature extraction, metadata integration, feature selection, and supervised learning — with a focus on model interpretability and class imbalance handling.
 
-## 🧠 Methodology
+## Methodology
 1. **Dataset before preprocesing:**:  
    - We had 12-lead ECGs from real patients stored in structured `.pkl` format  
    - We also had some clinical features: Sex, Age, BMI, Height, Weight, comorbidities, PVC transition types, etc.  
@@ -30,34 +30,23 @@ Our work combines signal preprocessing, deep learning-based segmentation, morpho
 
 4. **Metadata Fusion between feature extraction and selection**:
    - We merged each ECG sample with its patient metadata via `(PatientID, SampleID, Structure)`
-   - Some categorical features (Sex, Smoker, PVC transition) were one-hot encoded (binarized). 
 
 5. **Feature Selection**:
-   - We did some comparison between **ANOVA F-test** and **Mutual Information** methods
+   - We did a comparison between **ANOVA F-test** and **Mutual Information** methods
    - We selected the top 30 features per strategy
    - The interpretation of these features was based on SHAP values
 
 6. **Classification Models that worked best**:
-   - Left vs Right: Random Forest, XGBoost, Logistic Regression  
-   - RCC vs RVOTSEPTUM: Logistic Regression, SVM  
-   - Evaluation: Accuracy, F1-score, Confusion Matrices, SHAP explanations
+   - Left vs Right: Random Forest
+   - RCC vs RVOTSEPTUM: Logistic Regression
+   - Evaluation: Classification Report, Confusion Matrices, SHAP explanations
 
 7. **Class Imbalance Strategy, done before model evaluation**:
-   - Applied undersampling on dominant class (the Right one) to improve macro recall
+   - Applied undersampling on the dominant class to improve macro recall
    - The final balanced datasets improved interpretability and fairness
-
-## 📊 Key Results
-
-| Task                  | Best Model       | Accuracy | Highlights                              |
-|-----------------------|------------------|----------|------------------------------------------|
-| Left vs Right         | Random Forest    | ~76%     | Complex, nonlinear ECG patterns captured |
-| RCC vs RVOTSEPTUM     | Logistic Regression | ~72%     | Simpler boundary, strong linear features |
-
-- **SHAP analysis** confirmed us  the relevance of some specific ECG leads (V2–V5, AVF) and clinical data like: Sex, Height, PVC transitions, etc. 
-- Mutual Information (MI) selected more nonlinear/continuous features, while ANOVA favored stable categorical variables
 
 ## 👩‍🔬 Authors & Course Info
 
 This project was completed as part of the **CompBioMed (Computational Models in Biomedicine)** course at **Universitat Pompeu Fabra (UPF), Barcelona** during the Spring 2025 term.
 
-Our project developed by: **[Iabel Expósito, Tania Pazos, Madeleine Fairey and Xavier Miret]**
+Our project developed by: **[Iabel Expósito, Tània Pazos, Madeleine Fairey and Xavier Miret]**
