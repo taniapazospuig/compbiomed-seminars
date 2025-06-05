@@ -45,8 +45,6 @@ Our work combines signal preprocessing, deep learning-based segmentation, morpho
    - Applied undersampling on the dominant class to improve macro recall
    - The final balanced datasets improved interpretability and fairness
 
-## Authors & Course Info
+## Authors Info
 
-This project was completed as part of the **CompBioMed (Computational Models in Biomedicine)** course at **Universitat Pompeu Fabra (UPF), Barcelona** during the Spring 2025 term.
-
-Our project developed by: **[Iabel Expósito, Tània Pazos, Madeleine Fairey and Xavier Miret]**
+Our project developed by: **[Isabel Expósito, Tània Pazos, Madeleine Fairey and Xavier Miret]**
