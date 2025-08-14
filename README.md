@@ -20,14 +20,14 @@ Two classification tasks were addressed:
 ---
 
 ## Results
-- Left vs Right: Random Forest with ANOVA-selected features achieved 0.86 accuracy and 0.68 macro recall.  
-- RCC vs RVOT Septum: Logistic Regression with ANOVA-selected features achieved 0.63 accuracy and 0.81 macro recall.  
+- Left vs. Right: Random Forest with ANOVA-selected features achieved 0.86 accuracy and 0.68 macro recall.  
+- RCC vs. RVOT Septum: Logistic Regression with ANOVA-selected features achieved 0.63 accuracy and 0.81 macro recall.  
 
 ---
 
 ## Repository Contents
-- [seminars-report.pdf](./seminars-report.pdf)  
+- [`seminars-report.pdf`](./seminars-report.pdf)  
   Full methodology, experiments, and results.
     
-- [ecg_pvc_origin_classification.ipynb](./ecg_pvc_origin_classification.ipynb)  
+- [`ecg_pvc_origin_classification.ipynb`](./ecg_pvc_origin_classification.ipynb)  
   Data preprocessing, model training, and SHAP explainability.
