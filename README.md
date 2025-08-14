@@ -1,50 +1,36 @@
-# ECG Origin Classification in Ventricular Arrhythmias  
-### Final Seminar Project — Computational Models in Biomedicine (CompBioMed)  
-**Universitat Pompeu Fabra (UPF), Barcelona**
+# ECG-Based Classification of Ventricular Arrhythmia Origin
 
+**Final Project – Data Science and Computational Models in Biomedicine (CompBioMed), Universitat Pompeu Fabra (2025)**  
 
-Project Summary: 
-Our project presents a complete machine learning pipeline for classifying the anatomical origin of ventricular arrhythmias using multilead ECG recordings and clinical metadata. The goal was to computationally distinguish between  **Right vs Left ventricular outflow tract origins**, and more specifically, between **RCC vs RVOTSEPTUM** cases.
+---
 
-Our work combines signal preprocessing, deep learning-based segmentation, morphological feature extraction, metadata integration, feature selection, and supervised learning — with a focus on model interpretability and class imbalance handling.
+## Overview
+This project developed a complete machine learning pipeline to classify the anatomical origin of ventricular arrhythmias using 12-lead ECG recordings and clinical metadata.  
+Two classification tasks were addressed:  
+1. Left vs Right ventricular outflow tract origin.  
+2. Right Coronary Cusp (RCC) vs RVOT Septum origin for fine-grained right-sided classification.
 
-## Methodology
-1. **Dataset before preprocesing:**:  
-   - We had 12-lead ECGs from real patients stored in structured `.pkl` format  
-   - We also had some clinical features: Sex, Age, BMI, Height, Weight, comorbidities, PVC transition types, etc.  
-   - There were 2 classification tasks:
-     - **Left vs Right ventricular chamber**
-     - **RCC vs RVOTSEPTUM** 
+---
 
-2. **Signal Processing & Preprocessing pf the big and small datasets**:
-   - Signals  were resampled (1000Hz → 250Hz) and filtered (bandpass: 0.5–100Hz)
-   - We did R-peak alignment applied using Lead II
-   - Finally we obtained: Aligned ECG windows 
+## Key Contributions
+- Performed data preprocessing, including resampling, bandpass filtering, R-peak alignment, and standardization of anatomical labels.  
+- Extracted morphological ECG features such as wave amplitudes, QRS duration, and T-wave polarity using pretrained segmentation models.  
+- Combined ECG-derived features with patient metadata for a richer feature space.  
+- Compared ANOVA F-test and Mutual Information methods for feature selection.  
+- Evaluated seven classifiers: Logistic Regression, SVM, Random Forest, Gradient Boosting, XGBoost, k-NN, and MLP.  
+- Applied SHAP analysis to interpret predictions and relate feature importance to clinical reasoning.  
+- Addressed class imbalance using patient-level undersampling of the majority class.
 
-3. **Segmentation & Feature Extraction**:
-   - To segment ECG waves and extract morphological features, we relied on an ensemble of pretrained models built in PyTorch:
-         - R/S amplitudes  
-         - QRS duration  
-         - T-wave polarity  
-   - Features computed per lead → total of 60+ morphology descriptors
+---
 
-4. **Metadata Fusion between feature extraction and selection**:
-   - We merged each ECG sample with its patient metadata via `(PatientID, SampleID, Structure)`
+## Results
+- Left vs Right: Random Forest with ANOVA-selected features achieved 0.86 accuracy and 0.68 macro recall.  
+- RCC vs RVOT Septum: Logistic Regression with ANOVA-selected features achieved 0.63 accuracy and 0.81 macro recall.  
 
-5. **Feature Selection**:
-   - We did a comparison between **ANOVA F-test** and **Mutual Information** methods
-   - We selected the top 30 features per strategy
-   - The interpretation of these features was based on SHAP values
+---
 
-6. **Classification Models that worked best**:
-   - Left vs Right: Random Forest
-   - RCC vs RVOTSEPTUM: Logistic Regression
-   - Evaluation: Classification Report, Confusion Matrices, SHAP explanations
-
-7. **Class Imbalance Strategy, done before model evaluation**:
-   - Applied undersampling on the dominant class to improve macro recall
-   - The final balanced datasets improved interpretability and fairness
-
-## Authors Info
-
-Our project developed by: **[Isabel Expósito, Tània Pazos, Madeleine Fairey and Xavier Miret]**
+## Repository Contents
+- [seminars-report.pdf](./seminars-report.pdf)
+  Full methodology, experiments, and results.  
+- [big_dataset_processing.ipynb](./big_dataset_processing.ipynb)
+  Data preprocessing, model training, and SHAP explainability.
