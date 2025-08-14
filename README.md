@@ -29,5 +29,5 @@ Two classification tasks were addressed:
 - [seminars-report.pdf](./seminars-report.pdf)  
   Full methodology, experiments, and results.
     
-- [big_dataset_processing.ipynb](./big_dataset_processing.ipynb)  
+- [ecg_pvc_origin_classification.ipynb](./ecg_pvc_origin_classification.ipynb)  
   Data preprocessing, model training, and SHAP explainability.
