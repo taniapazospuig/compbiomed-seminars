@@ -1,11 +1,7 @@
 # ECG-Based Classification of Ventricular Arrhythmia Origin
 
-**Final Project – Data Science and Computational Models in Biomedicine (CompBioMed), Universitat Pompeu Fabra (2025)**  
-
----
-
-## Overview
-This project developed a complete machine learning pipeline to classify the anatomical origin of ventricular arrhythmias using 12-lead ECG recordings and clinical metadata.  
+## About the Project
+This work represents the final project for **Data Science and Computational Models in Biomedicine (CompBioMed)**, a third-year elective course for all degrees of the School of Engineering at Universitat Pompeu Fabra (2025). The project developed a complete machine learning pipeline to classify the anatomical origin of ventricular arrhythmias using 12-lead ECG recordings and patient metadata.
 Two classification tasks were addressed:  
 1. Left vs Right ventricular outflow tract origin.  
 2. Right Coronary Cusp (RCC) vs RVOT Septum origin for fine-grained right-sided classification.
@@ -30,7 +26,8 @@ Two classification tasks were addressed:
 ---
 
 ## Repository Contents
-- [seminars-report.pdf](./seminars-report.pdf)
-  Full methodology, experiments, and results.  
-- [big_dataset_processing.ipynb](./big_dataset_processing.ipynb)
+- [seminars-report.pdf](./seminars-report.pdf)  
+  Full methodology, experiments, and results.
+    
+- [big_dataset_processing.ipynb](./big_dataset_processing.ipynb)  
   Data preprocessing, model training, and SHAP explainability.
