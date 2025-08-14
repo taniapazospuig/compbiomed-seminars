@@ -20,8 +20,8 @@ Two classification tasks were addressed:
 ---
 
 ## Results
-- Left vs. Right: Random Forest with ANOVA-selected features achieved 0.86 accuracy and 0.68 macro recall.  
-- RCC vs. RVOT Septum: Logistic Regression with ANOVA-selected features achieved 0.63 accuracy and 0.81 macro recall.  
+- Left vs Right: Random Forest with ANOVA-selected features achieved 0.86 accuracy and 0.68 macro recall.  
+- RCC vs RVOT Septum: Logistic Regression with ANOVA-selected features achieved 0.63 accuracy and 0.81 macro recall.  
 
 ---
 
